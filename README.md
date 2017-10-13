@@ -1,2 +1,5 @@
 # timebox
-Control personal del tiempo invertido en las tareas
+Control personal de tareas
+
+npm install
+.\node_modules\.bin\electron .
