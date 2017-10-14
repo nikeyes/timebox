@@ -2,25 +2,28 @@ let google = require('googleapis');
 let authentication = require("./authentication");
 let moment = require('moment');
 
-document.getElementById("description").addEventListener("keyup", function(event) {
-    event.preventDefault();
+document.getElementById("tag").addEventListener("keyup", keyupCallback);
+document.getElementById("description").addEventListener("keyup", keyupCallback);
 
-    let tag = document.getElementById('tag');
-    let description = document.getElementById('description');
+function keyupCallback(event) {
+  event.preventDefault();
 
-    if (event.keyCode == 13) {
-        authentication.authenticate().then((auth)=>{
-          appendData(auth
-                    ,tag.value.toUpperCase()
-                    ,description.value
-                    ,() => {
-                        tag.value = "";
-                        description.value = "";
-                        tag.focus();
-                    });
-        })
-    }
-});
+  let tag = document.getElementById('tag');
+  let description = document.getElementById('description');
+
+  if (event.keyCode == 13) {
+      authentication.authenticate().then((auth)=>{
+        appendData(auth
+                  ,tag.value.toUpperCase()
+                  ,description.value
+                  ,() => {
+                      tag.value = "";
+                      description.value = "";
+                      tag.focus();
+                  });
+      })
+  }
+}
 
 function appendData(auth, tag, description, callback) {
   var sheets = google.sheets('v4');
