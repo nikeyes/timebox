@@ -44,7 +44,7 @@ function appendData(auth, team, task, description, callback) {
     range: 'Sheet1!A2:B', //Change Sheet1 if your worksheet's name is something else
     valueInputOption: "USER_ENTERED",
     resource: {
-      values: [[moment().format('DD/MM/YYYY hh:mm:ss')
+      values: [[moment().format('DD/MM/YYYY HH:mm:ss')
                 ,team
                 ,task
                 ,description]]
