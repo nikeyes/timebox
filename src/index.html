@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Timebox</title>
-    <link rel="stylesheet" href="awesomplete.css" />
-    <script src="awesomplete.js" async></script>
     <style>
       .draggable {
         -webkit-app-region: drag;
@@ -21,14 +19,7 @@
     </style>
   </head>
   <body>
-      <input type="text" id="team" class="awesomplete" list="teamList" style="width: 50px;"/>
-      <datalist id="teamList">
-        <option>LQA</option>
-        <option>LQB</option>
-        <option>CORE</option>
-        <option>MKT</option>
-        <option>OTROS</option>
-      </datalist>
+      <input type="text" id="team" style="width: 50px;"/>
       <input type="text" id="task" style="width: 50px;"/>
       <input type="text" id="description" style="width: 200px;"/>
       <a href='#' onclick="openSpreedSheet()">S</a>
